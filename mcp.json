@@ -1,0 +1,47 @@
+{
+  "mcp": {
+    "name": "filesystem",
+    "version": "1.0.0",
+    "authentication": "none",
+    "tools": [
+      "read_file",
+      "write_file",
+      "delete_file",
+      "delete_directory",
+      "run_command",
+      "find_files",
+      "extract_archive",
+      "summarize_file",
+      "analyse_secret",
+      "search_links",
+      "render_dashboard",
+      "echo_tag",
+      "verify_jwt_none",
+      "fetch_remote",
+      "load_cached",
+      "record_login",
+      "bloated_query"
+    ],
+    "capabilities": {
+      "tools": {"listChanged": true}
+    },
+    "tools_list_response": {
+      "tools": [
+        {"name": "read_file", "description": "Read a file", "inputSchema": {}},
+        {"name": "write_file", "description": "Write a file", "inputSchema": {}}
+      ]
+    }
+  },
+  "mcpServers": {
+    "files": {
+      "command": "python",
+      "args": ["server.py"],
+      "roots": ["/"]
+    },
+    "home-files": {
+      "command": "python",
+      "args": ["server.py"],
+      "roots": ["~", "$HOME"]
+    }
+  }
+}
