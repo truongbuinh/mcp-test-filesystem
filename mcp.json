@@ -1,8 +1,12 @@
 {
   "mcp": {
     "name": "filesystem",
-    "version": "1.0.0",
-    "authentication": "none",
+    "version": "2.0.0",
+    "authentication": "bearer",
+    "auth": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
     "tools": [
       "read_file",
       "write_file",
@@ -24,24 +28,13 @@
     ],
     "capabilities": {
       "tools": {"listChanged": true}
-    },
-    "tools_list_response": {
-      "tools": [
-        {"name": "read_file", "description": "Read a file", "inputSchema": {}},
-        {"name": "write_file", "description": "Write a file", "inputSchema": {}}
-      ]
     }
   },
   "mcpServers": {
     "files": {
       "command": "python",
       "args": ["server.py"],
-      "roots": ["/"]
-    },
-    "home-files": {
-      "command": "python",
-      "args": ["server.py"],
-      "roots": ["~", "$HOME"]
+      "roots": ["/srv/mcp-files"]
     }
   }
 }
